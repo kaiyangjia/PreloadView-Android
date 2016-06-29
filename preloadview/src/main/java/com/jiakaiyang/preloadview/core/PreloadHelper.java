@@ -2,9 +2,7 @@ package com.jiakaiyang.preloadview.core;
 
 import android.content.Context;
 
-import com.jiakaiyang.preloadview.dispatch.PreloadActivityManager;
-
-import static com.jiakaiyang.preloadview.utils.TypeUtils.isActivity;
+import com.jiakaiyang.preloadview.dispatch.PreloadManager;
 
 /**
  * 使用帮助类，提供面向用户的api供使用者调用该库的所有对外功能
@@ -13,12 +11,12 @@ import static com.jiakaiyang.preloadview.utils.TypeUtils.isActivity;
  */
 public class PreloadHelper {
     private Context context;
-    private PreloadActivityManager preloadActivityManager;
+    private PreloadManager preloadManager;
     private static PreloadHelper instance;
 
     private PreloadHelper(Context context){
         this.context = context;
-        preloadActivityManager = PreloadActivityManager.getInstance(context);
+        preloadManager = PreloadManager.getInstance(context);
     }
 
     public PreloadHelper getInstance(Context context){
@@ -35,9 +33,7 @@ public class PreloadHelper {
      * @param layout
      */
     public void startPreload(String activity, int layout){
-        if(isActivity(activity)){
-            preloadActivityManager.startPreload(activity, layout);
-        }
+
     }
 
     /**

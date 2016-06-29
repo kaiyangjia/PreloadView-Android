@@ -12,8 +12,30 @@
     tools:context="com.jiakaiyang.preloadview_android.MainActivity"
     tools:showIn="@layout/activity_main">
 
-    <TextView
+    <Button
+        android:id="@+id/btn_preload"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:text="开始预加载" />
+
+    <Button
+        android:id="@+id/btn_normal"
+        android:layout_below="@id/btn_preload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="正常启动"/>
+
+    <Button
+        android:id="@+id/btn_preload_start"
+        android:layout_below="@id/btn_normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="预加载启动" />
+
+    <TextView
+        android:id="@+id/preload_msg"
+        android:layout_below="@id/btn_preload_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="test"/>
 </RelativeLayout>
