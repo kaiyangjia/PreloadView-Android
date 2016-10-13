@@ -4,7 +4,6 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 
-import com.google.common.base.Preconditions;
 import com.jiakaiyang.preloadview.entity.BaseTask;
 
 /**
@@ -32,11 +31,11 @@ public class Preloader {
      * @param baseTask
      */
     public void load(BaseTask baseTask){
-        Preconditions.checkNotNull(baseTask);
-        Preconditions.checkArgument(baseTask.getLayout() != -1);
-
-        View rootView = load(baseTask.getLayout());
-        baseTask.setRootView(rootView);
+        if (baseTask != null
+                && baseTask.getLayout() != -1){
+            View rootView = load(baseTask.getLayout());
+            baseTask.setRootView(rootView);
+        }
     }
 
     /**
@@ -45,7 +44,10 @@ public class Preloader {
      * @return 返回已经加载过的一个task的rootView，如果该task的view不再内存中，则返回null
      */
     public View getLoaded(BaseTask baseTask){
-        Preconditions.checkNotNull(baseTask);
-        return baseTask.getRootView();
+        if(baseTask != null){
+            return baseTask.getRootView();
+        }
+
+        return null;
     }
 }

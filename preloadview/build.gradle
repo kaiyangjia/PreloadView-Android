@@ -5,7 +5,7 @@ apply plugin: 'com.jfrog.bintray'
 def siteUrl = 'https://github.com/kaiyangjia/PreloadView-Android'
 def gitUrl = 'https://github.com/kaiyangjia/PreloadView-Android.git'
 group = "com.jiakaiyang" // Maven Group ID for the artifact
-version = "0.9"
+version = "1.0"
 
 android {
     compileSdkVersion 23
@@ -35,7 +35,6 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.3.0'
     compile 'org.apache.commons:commons-lang3:3.4'
-    compile 'com.google.guava:guava:19.0'
 }
 
 install {
